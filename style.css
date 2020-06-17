@@ -2,13 +2,30 @@
 {
     text-align: center;
     border: 1px solid gainsboro;
-    background-color: rgba(129, 12, 12, 0.712);
+    background-image: url("https://images.unsplash.com/photo-1521805103424-d8f8430e8933?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+#app_title_text
+{
+    margin: 3% 25%;
+    background-color: rgba(3, 3, 3, 0.486);
+    letter-spacing: 8px;
+    word-spacing: 10px;
 }
 
 .main_divs
 {
     margin-bottom: 30px;
     text-align: center;
+}
+
+#form_1 label
+{
+    margin-right: 3%;
 }
 
 #form_2
