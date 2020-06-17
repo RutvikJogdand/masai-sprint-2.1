@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My fitness tracker</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+
+        <div id="app_title">
+            
+            <h1>Personal Fitness Tracker</h1>
+
+        </div>
+
+        <div id="personal_details">Please enter your details:
+
+            <form id="form_1">
+                <label for="name">
+                    <input type="text" name="user_name" id="user_name" placeholder="Name">
+                </label>
+
+                <label for="age">
+                    <input type="number" name="user_age" id="user_age" placeholder="Age">
+                </label>
+
+                <label for="gender"> Gender:
+                    <select id="user_gender">
+                        <option value="Male">Male</option>
+
+                        <option value="Female">Female</option>
+                    </select>
+                </label>
+
+            </form>
+                    
+        </div>    
+
+        <div id="log">
+
+            <form id="form_2">
+
+                <label for="goal">Select your goal:
+                    <select id="goal">
+                        <option value="fat-loss">Fat Loss</option>
+
+                        <option value="weight-gain">Weight Gain</option>
+
+                        <option value="maintain">Maintainance</option>
+
+                    </select>
+
+                </label>
+
+            </form>
+
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+
+</html>
