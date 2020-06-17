@@ -8,38 +8,15 @@
 
     <body>
 
-        <div id="app_title">
+        <div class="main_divs" id="app_title">
             
             <h1>Personal Fitness Tracker</h1>
 
         </div>
-
-        <div id="personal_details">Please enter your details:
+                      
+        <div class="main_divs" id="fitness_goals">
 
             <form id="form_1">
-                <label for="name">
-                    <input type="text" name="user_name" id="user_name" placeholder="Name">
-                </label>
-
-                <label for="age">
-                    <input type="number" name="user_age" id="user_age" placeholder="Age">
-                </label>
-
-                <label for="gender"> Gender:
-                    <select id="user_gender">
-                        <option value="Male">Male</option>
-
-                        <option value="Female">Female</option>
-                    </select>
-                </label>
-
-            </form>
-                    
-        </div>    
-
-        <div id="log">
-
-            <form id="form_2">
 
                 <label for="goal">Select your goal:
                     <select id="goal">
@@ -53,9 +30,50 @@
 
                 </label>
 
-            </form>
+                <label for="maintain_calories">
+                    <input type="number" name="user_maintain_calories" id="user_maintain_calories" placeholder="Enter your maintainance calories">
+                </label>
 
+                <button id="fitness_goals_btn" onclick="submit_fitness_goals()">ADD</button>
+
+            </form>
         </div>
+
+            
+        <div class="main_divs" id="logs_submit" style="border: 1px solid black;">
+
+            <form id="form_2">
+                <div class="main_input_fields" id="food_details">  
+
+                    <!--Input field to enter the name of the food eaten-->
+                    <input type="text" id="food_name" name="food_name" class="input_fields" placeholder="Food Name and quantity">
+        
+                    <!--Input field to enter calories of the respective food item-->
+                    <input type="number" id="calorie_amount" name="calorie_amount" class="input_fields" placeholder="Enter Number of calories">
+        
+                    <button class="food_item_entry" onclick="make_new_food_item_entry()">ADD</button> <!--Each click displays the food name and its calories-->
+        
+                    <button class="sum_of_calories_consumed" onclick="sum_of_calories()">Calories Consumed</button>
+                </div>
+        
+                <div class="main_input_fields" id="workout_details">  
+
+                    <!--Input field to enter the name of the food eaten-->
+                    <input type="text" id="workout_name" name="workout_name" class="input_fields" placeholder="Workout Name and duration">
+        
+                    <!--Input field to enter calories of the respective food item-->
+                    <input type="number" id="calorie_amount_burned" name="calorie_amount_burned" class="input_fields" placeholder="Enter calories burnt">
+        
+                    <button class="workout_item_entry" onclick="make_new_workout_item_entry()">ADD</button> <!--Each click displays the workout name and calories burnt by it-->
+        
+                    <button class="sum_of_calories_burnt" onclick="sum_of_calories_burnt()">Calories Burned</button>
+                </div>
+            </form>
+            
+        </div>
+
+        
+        
 
         <script src="script.js"></script>
     </body>
