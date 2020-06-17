@@ -4,9 +4,13 @@ var workout_calories=[]
 
 var mntc_calories
 
+var fitness_goal
+
 function submit_fitness_goals()
 {
     var get_fitness_goal= document.getElementById("goal").value
+
+    fitness_goal=get_fitness_goal
 
     var get_mtnc_calories= document.getElementById("user_maintain_calories").value
 
@@ -73,6 +77,7 @@ function make_new_food_item_entry()
 
     delete_value_button.addEventListener('click', delete_current_value)
 
+    
         function delete_current_value()
         {
             make_div_for_food_name.remove()
@@ -83,8 +88,11 @@ function make_new_food_item_entry()
                 {
                     food_calories[i]=0
                     break
+                  
                 }
+            
             }
+           
         }
     
 
@@ -165,4 +173,49 @@ function make_new_workout_item_entry()
     console.log(workout_calories)
 
     event.preventDefault()
+}
+
+
+function check_progress()
+{
+    var get_mtnc_calories_for_check= mntc_calories
+
+
+
+    var get_goal_for_check= fitness_goal
+
+
+
+    var get_total_calories_consumed= Number(document.getElementById("display_cal_consumed").textContent)
+
+
+
+    var get_total_calories_burned= Number(document.getElementById("display_cal_burned").textContent)
+
+
+
+    var get_display_progress= document.getElementById("display_progress")
+
+    var caloric_diff= Math.abs(get_total_calories_consumed-get_total_calories_burned)
+
+        if(fitness_goal==="fat-loss")
+            {
+                if(caloric_diff<get_mtnc_calories_for_check)
+                    {
+                        if(caloric_diff<1500)
+                            {
+                                get_display_progress.textContent="Your caloric deficit for the day is: "+ caloric_diff+" ,this is too low. Please eat sufficient amount of food to maintain your health."
+                            }
+                        if(caloric_diff>1500&&caloric_diff<get_mtnc_calories_for_check)
+                            {
+                                get_display_progress.textContent="Your caloric deficit for the day is: "+ caloric_diff+". Congratulations, you achieved your calories goal for the day"
+                            }
+
+                    }
+
+                else if(caloric_diff>1500&&caloric_diff>=get_mtnc_calories_for_check)
+                    {
+                        get_display_progress.textContent="Your caloric deficit for the day is: "+ caloric_diff+". You are not meeting your calorie goals for the day. Please watch and plan your meals better to ensure fat loss"
+                    }    
+            }
 }
