@@ -33,11 +33,15 @@ function make_new_food_item_entry()
 
     var make_div_for_food_name= document.createElement("div")
 
+    make_div_for_food_name.setAttribute("class", "class_food_name")
+
     make_div_for_food_name.textContent= get_food_name
 
 
 
     var make_div_for_food_calories= document.createElement("div")
+
+    make_div_for_food_calories.setAttribute("class", "class_food_calories")
 
     make_div_for_food_calories.textContent= get_food_calories
 
@@ -128,6 +132,13 @@ function make_new_workout_item_entry()
     document.getElementById("display_workout_name").append(make_div_for_workout_name)
 
     document.getElementById("display_workout_calories").append(make_div_for_calories_burned)
+
+
+
+    make_div_for_workout_name.setAttribute("class", "class_wrkt_name")
+
+    make_div_for_calories_burned.setAttribute("class", "class_cal_brnd")
+
 
 
 
