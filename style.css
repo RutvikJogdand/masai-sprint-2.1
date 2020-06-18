@@ -18,7 +18,7 @@
     background-size: cover;
     color: white;
     height: 100%;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 }
 
 
@@ -218,6 +218,11 @@ input, select
     {
         font-size: 14px;
     }
+
+    #form_1 label>select, input
+    {
+        width: 60%;
+    }
    
 }
 
@@ -265,5 +270,10 @@ input, select
     {
         text-align: left;
         margin-left: 3%;
+    }
+
+    #form_1 label>select, input
+    {
+        width: 90%;
     }
 }
