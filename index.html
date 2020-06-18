@@ -39,6 +39,8 @@
 
             </form>
 
+            <a id="foods_info" href="https://www.uncledavesenterprise.com/file/health/Food%20Calories%20List.pdf" target="_blank">Click Here to get a list of foods with their respective quantities and calorie content</a>
+
             <h2 id="display_mntc_calories"></h2>
         </div>
 
@@ -75,29 +77,35 @@
 
         <div class="main_divs" id="display_things">
 
-            <div id="display_food_name">Food Name and Quantity:<hr></div>
+            <div id="display_food_name"><span class="titles">Food Name and Quantity:</span><hr></div>
 
-            <div id="display_food_calories">Calories:<hr></div>
+            <div id="display_food_calories"><span class="titles">Calories:</span><hr></div>
 
-            <div id="display_workout_name">Workout Name and Duration:<hr></div>
+            <div id="display_workout_name"><span class="titles">Workout Name and Duration:</span><hr></div>
 
-            <div id="display_workout_calories">Calories Burned:<hr></div>
+            <div id="display_workout_calories"><span class="titles">Calories burned:</span><hr></div>
 
         </div>
 
-        <div id="display_res">
+        <div class="main_divs" id="display_res">
 
-            <span>Total calories consumed:<br><br></span>
             <h1 id="display_cal_consumed"></h1>
 
-            <span>Total calories burned:<br><br></span>
             <h1 id="display_cal_burned"></h1>
 
             <h2 id="display_progress"></h2>
 
         </div>
 
-        <button onclick="check_progress()">Check Progress</button>
+        <div id="result_btns">
+            <button onclick="update_calories_consumed()">Update Calories Consumed</button>
+
+            <button onclick="update_calories_burned()">Update Calories Burned</button>
+
+            <button onclick="check_progress()">Check Progress</button>
+        </div>
+
+        
         
 
         <script src="script.js"></script>

@@ -17,15 +17,52 @@
     word-spacing: 10px;
 }
 
+
+#foods_info
+{
+    font-size: 15px;
+    background-color: rgba(110, 110, 110, 0.486);
+    color: black;
+    font-weight: 500;
+    font-family: sans-serif;
+    margin-top: 20px;
+}
+
 .main_divs
 {
     margin-bottom: 30px;
     text-align: center;
 }
 
+#form_1
+{
+    margin-bottom: 30px;
+}
+
 #form_1 label
 {
     margin-right: 3%;
+    font-size: 20px;
+}
+
+#form_1 label>select, input
+{
+    font-size: 15px;
+}
+
+#form_1>button
+{
+    padding: 5px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: rgba(98, 248, 11, 0.911);
+    color: white;
+    border: 1px solid rgb(214, 214, 214);
+}
+
+#form_1>*
+{
+    font-family: sans-serif;
 }
 
 #form_2
@@ -59,6 +96,7 @@
 {
     display: flex;
     flex-direction: row;
+    text-align: center;
 }
 
 #display_res>*
@@ -75,7 +113,7 @@
 .deleteV2, .deleteVl
 {
     float: right;
-    border-radius: 5px;
+    border-radius: 100px;
     font-size: 10px;
     background-color: rgba(250, 43, 43, 0.904);
     color: white;
@@ -84,5 +122,41 @@
 .class_wrkt_name, .class_cal_brnd, .class_food_calories, .class_food_name
 {
     margin-bottom: 12px;
-    border-bottom: 1px solid rgba(236, 236, 236, 0.932);
+    color: white;
+    font-weight: 600;
+    background-color: rgba(3, 3, 3, 0.486);
+}
+
+#display_food_name
+{
+    background-image: url("https://images.unsplash.com/photo-1517399793420-c08c6933dbc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.titles
+{
+    font-size: 15px;
+    color: white;
+    font-weight: 600;
+    background-color: rgba(3, 3, 3, 0.486);
+}
+
+
+#result_btns
+{
+    margin-left: 18%;
+}
+
+#result_btns>button
+{
+    margin-right: 10%;
+    padding: 5px 20px;
+    font-size: 15px;
+    background-color: red;
+    color: white;
+    font-weight: 600;
+
 }

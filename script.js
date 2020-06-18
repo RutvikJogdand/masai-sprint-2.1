@@ -25,6 +25,8 @@ function submit_fitness_goals()
         {
             alert("Maintanance calories are too less. Eating less than 1500 calories per day is harmful for your health")
 
+            get_display_mntc_calories.innerHTML="Maintainance calories are too less"
+
             return -1
         }
         
@@ -56,6 +58,9 @@ function make_new_food_item_entry()
     var get_food_calories= Number(document.getElementById("calorie_amount").value)
 
 
+    food_calories.push(get_food_calories)
+
+
 
     var make_div_for_food_name= document.createElement("div")
 
@@ -78,26 +83,10 @@ function make_new_food_item_entry()
     document.getElementById("display_food_calories").append(make_div_for_food_calories)
 
 
-
-    var get_display_cal_consumed= document.getElementById("display_cal_consumed")
-
-
-
-    food_calories.push(get_food_calories)
-
-    var total=0
-
-    for(i=0;i<food_calories.length;i++)
-    {
-        total=total+food_calories[i]
-    }
-
-    get_display_cal_consumed.textContent= total
+   
 
 
     var delete_value_button= document.createElement('button')
-
-    
 
     delete_value_button.setAttribute('class', 'deleteVl')
 
@@ -126,13 +115,33 @@ function make_new_food_item_entry()
         }
     
 
-    console.log(total)
+    
 
     console.log(food_calories)
 
 
     event.preventDefault()
 }
+
+
+function update_calories_consumed()
+{
+    var get_display_cal_consumed= document.getElementById("display_cal_consumed")
+
+
+    var total=0
+
+    for(i=0;i<food_calories.length;i++)
+    {
+        total=total+food_calories[i]
+    }
+
+    get_display_cal_consumed.append("Total Calories Consumed: "+total)
+
+    
+    
+}
+
 
 
 function make_new_workout_item_entry()
@@ -170,17 +179,6 @@ function make_new_workout_item_entry()
 
     workout_calories.push(get_calories_burned)
 
-    var get_display_cal_burned= document.getElementById("display_cal_burned")
-
-    var total2=0
-
-    for(i=0;i<workout_calories.length;i++)
-    {
-        total2=total2+workout_calories[i]
-    }
-
-    get_display_cal_burned.textContent= total2
-
 
     var delete_value_button= document.createElement('button')
 
@@ -213,13 +211,28 @@ function make_new_workout_item_entry()
 }
 
 
+function update_calories_burned()
+{
+
+    var get_display_cal_burned= document.getElementById("display_cal_burned")
+
+    var total2=0
+
+    for(i=0;i<workout_calories.length;i++)
+    {
+        total2=total2+workout_calories[i]
+    }
+
+    get_display_cal_burned.append("Total Calories Burned: "+total2)
+
+    
+
+}
+
+
 function check_progress()
 {
     var get_mtnc_calories_for_check= mntc_calories
-
-
-
-    var get_goal_for_check= fitness_goal
 
 
 
