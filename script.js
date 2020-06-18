@@ -18,6 +18,8 @@ function submit_fitness_goals()
 
     var get_display_mntc_calories= document.getElementById("display_mntc_calories")
 
+    get_display_mntc_calories.style.backgroundColor="rgba(3, 3, 3, 0.6)"
+
     get_display_mntc_calories.innerHTML= "Your maintainance calories are: "+get_mtnc_calories+"<br>"
 
 
@@ -136,7 +138,7 @@ function update_calories_consumed()
         total=total+food_calories[i]
     }
 
-    get_display_cal_consumed.append("Total Calories Consumed: "+total)
+    get_display_cal_consumed.innerHTML= total
 
     
     
@@ -223,7 +225,7 @@ function update_calories_burned()
         total2=total2+workout_calories[i]
     }
 
-    get_display_cal_burned.append("Total Calories Burned: "+total2)
+    get_display_cal_burned.innerHTML= total2
 
     
 
@@ -265,7 +267,7 @@ function check_progress()
 
                 else if(caloric_diff>1500&&caloric_diff>=get_mtnc_calories_for_check)
                     {
-                        get_display_progress.textContent="Your caloric deficit for the day is: "+ caloric_diff+". You are not meeting your calorie goals for the day. Please watch and plan your meals better to ensure fat loss"
+                        get_display_progress.textContent="Your caloric deficit for the day is: "+ caloric_diff+". You are eating a lot of extra calories. Please watch and plan your meals better to ensure fat loss"
                     }    
             }
 

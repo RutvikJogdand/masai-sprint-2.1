@@ -8,102 +8,108 @@
 
     <body>
 
-        <div class="main_divs" id="app_title">
+        <div id="app_title">
             
             <h1 id="app_title_text">Personal Fitness Tracker</h1>
 
         </div>
-                      
-        <div class="main_divs" id="fitness_goals">
 
-            <form id="form_1">
+        <div id="content">
+            <div class="main_divs" id="fitness_goals">
 
-                <label for="goal">Select your goal:
-                    <select id="goal">
-                        <option value="fat-loss">Fat Loss</option>
+                <form id="form_1">
 
-                        <option value="weight-gain">Weight and Muscle Gain</option>
+                    <label for="goal">Select your goal:
+                        <select id="goal">
+                            <option value="fat-loss">Fat Loss</option>
 
-                        <option value="maintain">Maintainance</option>
+                            <option value="weight-gain">Weight and Muscle Gain</option>
 
-                    </select>
+                            <option value="maintain">Maintainance</option>
 
-                </label>
+                        </select>
 
-                <label for="maintain_calories">
-                    <input type="number" name="user_maintain_calories" id="user_maintain_calories" placeholder="Enter your maintainance calories" min="1500">
-                </label>
+                    </label>
 
-                <br><br>
-                <button id="fitness_goals_btn" onclick="submit_fitness_goals()">ADD</button>
+                    <label for="maintain_calories">
+                        <input type="number" name="user_maintain_calories" id="user_maintain_calories" placeholder="Enter your maintainance calories" min="1500">
+                    </label>
 
-            </form>
+                    <br><br>
+                    <button id="fitness_goals_btn" onclick="submit_fitness_goals()">ADD</button>
 
-            <a id="foods_info" href="https://www.uncledavesenterprise.com/file/health/Food%20Calories%20List.pdf" target="_blank">Click Here to get a list of foods with their respective quantities and calorie content</a>
+                </form>
 
-            <h2 id="display_mntc_calories"></h2>
-        </div>
+                <a id="foods_info" href="https://www.uncledavesenterprise.com/file/health/Food%20Calories%20List.pdf" target="_blank">Click Here to get a list of foods with their respective quantities and calorie content</a>
 
+                <h2 id="display_mntc_calories"></h2>
+            </div>
+
+            <hr>
+                
+            <div class="main_divs" id="logs_submit">
+
+                <form id="form_2">
+                    <div class="main_input_fields" id="food_details">  
+
+                        <!--Input field to enter the name of the food eaten-->
+                        <input type="text" id="food_name" name="food_name" class="input_fields" placeholder="Food Name and quantity" required>
             
-        <div class="main_divs" id="logs_submit" style="border: 1px solid black;">
-
-            <form id="form_2">
-                <div class="main_input_fields" id="food_details">  
-
-                    <!--Input field to enter the name of the food eaten-->
-                    <input type="text" id="food_name" name="food_name" class="input_fields" placeholder="Food Name and quantity" required>
-        
-                    <!--Input field to enter calories of the respective food item-->
-                    <input type="number" id="calorie_amount" name="calorie_amount" class="input_fields" placeholder="Enter Number of calories">
-        
-                    <button class="food_item_entry" onclick="make_new_food_item_entry()">ADD</button> <!--Each click displays the food name and its calories-->
-        
-                </div>
-        
-                <div class="main_input_fields" id="workout_details">  
-
-                    <!--Input field to enter the name of the food eaten-->
-                    <input type="text" id="workout_name" name="workout_name" class="input_fields" placeholder="Workout Name and duration">
-        
-                    <!--Input field to enter calories of the respective food item-->
-                    <input type="number" id="calorie_amount_burned" name="calorie_amount_burned" class="input_fields" placeholder="Enter calories burnt">
-        
-                    <button class="workout_item_entry" onclick="make_new_workout_item_entry()">ADD</button> <!--Each click displays the workout name and calories burnt by it-->
-        
-                </div>
-            </form>
+                        <!--Input field to enter calories of the respective food item-->
+                        <input type="number" id="calorie_amount" name="calorie_amount" class="input_fields" placeholder="Enter Number of calories">
             
-        </div>
+                        <button class="food_item_entry" onclick="make_new_food_item_entry()">ADD</button> <!--Each click displays the food name and its calories-->
+            
+                    </div>
+            
+                    <div class="main_input_fields" id="workout_details">  
 
-        <div class="main_divs" id="display_things">
+                        <!--Input field to enter the name of the food eaten-->
+                        <input type="text" id="workout_name" name="workout_name" class="input_fields" placeholder="Workout Name and duration">
+            
+                        <!--Input field to enter calories of the respective food item-->
+                        <input type="number" id="calorie_amount_burned" name="calorie_amount_burned" class="input_fields" placeholder="Enter calories burnt">
+            
+                        <button class="workout_item_entry" onclick="make_new_workout_item_entry()">ADD</button> <!--Each click displays the workout name and calories burnt by it-->
+            
+                    </div>
+                </form>
+                
+            </div>
 
-            <div id="display_food_name"><span class="titles">Food Name and Quantity:</span><hr></div>
+            <hr>
 
-            <div id="display_food_calories"><span class="titles">Calories:</span><hr></div>
+            <div class="main_divs" id="display_things">
 
-            <div id="display_workout_name"><span class="titles">Workout Name and Duration:</span><hr></div>
+                <div id="display_food_name"><span class="titles">Meal Deatils:</span><hr></div>
 
-            <div id="display_workout_calories"><span class="titles">Calories burned:</span><hr></div>
+                <div id="display_food_calories"><span class="titles">Calories:</span><hr></div>
 
-        </div>
+                <div id="display_workout_name"><span class="titles">Workout Details:</span><hr></div>
 
-        <div class="main_divs" id="display_res">
+                <div id="display_workout_calories"><span class="titles">Calories burned:</span><hr></div>
 
-            <h1 id="display_cal_consumed"></h1>
+            </div>
 
-            <h1 id="display_cal_burned"></h1>
+            <div class="main_divs" id="display_res">
 
-            <h2 id="display_progress"></h2>
+                <h1 id="display_cal_consumed"></h1>
 
-        </div>
+                <h1 id="display_cal_burned"></h1>
 
-        <div id="result_btns">
-            <button onclick="update_calories_consumed()">Update Calories Consumed</button>
+                <h2 id="display_progress"></h2>
 
-            <button onclick="update_calories_burned()">Update Calories Burned</button>
+            </div>
 
-            <button onclick="check_progress()">Check Progress</button>
-        </div>
+            <div class="main_divs"  id="result_btns">
+                <button onclick="update_calories_consumed()">Update Calories Consumed</button>
+
+                <button onclick="update_calories_burned()">Update Calories Burned</button>
+
+                <button onclick="check_progress()">Check Progress</button>
+            </div>
+      </div>                
+        
 
         
         

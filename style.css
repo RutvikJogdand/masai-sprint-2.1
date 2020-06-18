@@ -9,6 +9,19 @@
     color: white;
 }
 
+#content
+{
+    padding-top: 50px; 
+    background-image: url("https://wallpaperaccess.com/full/460951.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    height: 100%;
+    padding-bottom: 100px;
+}
+
+
 #app_title_text
 {
     margin: 3% 25%;
@@ -22,7 +35,7 @@
 {
     font-size: 15px;
     background-color: rgba(110, 110, 110, 0.486);
-    color: black;
+    color: white;
     font-weight: 500;
     font-family: sans-serif;
     margin-top: 20px;
@@ -32,11 +45,13 @@
 {
     margin-bottom: 30px;
     text-align: center;
+    
 }
 
 #form_1
 {
     margin-bottom: 30px;
+    
 }
 
 #form_1 label
@@ -102,6 +117,7 @@
 #display_res>*
 {
     flex: 1;
+    
 }
 
 #user_maintain_calories
@@ -127,36 +143,127 @@
     background-color: rgba(3, 3, 3, 0.486);
 }
 
-#display_food_name
-{
-    background-image: url("https://images.unsplash.com/photo-1517399793420-c08c6933dbc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    
-}
-
 .titles
 {
-    font-size: 15px;
+    font-size: 20px;
     color: white;
     font-weight: 600;
     background-color: rgba(3, 3, 3, 0.486);
+    font-family: sans-serif;
 }
 
 
 #result_btns
 {
-    margin-left: 18%;
+    display: flex;
 }
 
 #result_btns>button
 {
-    margin-right: 10%;
     padding: 5px 20px;
     font-size: 15px;
-    background-color: red;
+    background-color: rgba(230, 13, 13, 0.842);
     color: white;
     font-weight: 600;
+    border: 1px solid gray;
+    flex: 1;
+    margin-right: 2%;
+    margin-left: 2%;
 
+}
+
+input, select
+{
+    background-color: rgba(3, 3, 3, 0.486);
+    color: white;
+}
+
+::placeholder
+{
+    color: white;
+}
+
+
+.main_input_fields>input
+{
+    margin-bottom: 20px;
+}
+
+
+@media (min-width: 641px) and (max-width: 1170px){
+
+    #form_2
+    {
+        margin: 2% 2% 2% 11%;
+    }
+
+    .main_input_fields> input
+    {
+        font-size: 12px;
+    }
+
+    .titles
+    {
+        font-size: 14px;
+        background-color: rgba(3, 3, 3, 0.7);
+       
+    }
+
+    #result_btns>button
+    {
+        font-size: 12px;
+    }
+
+    .display_res>h1, h2
+    {
+        font-size: 14px;
+    }
+   
+}
+
+@media (min-width: 240px) and (max-width: 640px){
+
+    #form_2
+    {
+        margin: 2% 2% 2% 11%;
+    }
+
+    .main_input_fields> input
+    {
+        font-size: 12px;
+    }
+
+    .titles
+    {
+        font-size: 14px;
+        background-color: rgba(3, 3, 3, 0.7);
+       
+    }
+
+    #result_btns>button
+    {
+        font-size: 12px;
+    }
+
+    .display_res>h1, h2
+    {
+        font-size: 17px;
+    }
+
+    #form_1 label
+    {
+       
+        font-size: 14px;
+    }
+
+    #form_1 label>select, input
+    {
+        font-size: 14px;
+    }   
+
+    #fitness_goals
+    {
+        text-align: left;
+        margin-left: 3%;
+    }
 }
