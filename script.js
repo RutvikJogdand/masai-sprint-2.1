@@ -246,66 +246,61 @@ function check_progress()
 
 
 
-    var get_display_progress= document.getElementById("display_progress")
+    var get_display_progress= document.getElementById("display_cal_diff")
+
+    var get_display_message= document.getElementById("display_message")
 
     var caloric_diff= Math.abs(get_total_calories_consumed-get_total_calories_burned)
 
+    console.log(caloric_diff, "This is cal diff")
+
+    get_display_progress.textContent= caloric_diff
+
         if(fitness_goal==="fat-loss")
             {
-                if(caloric_diff<get_mtnc_calories_for_check)
-                    {
-                        if(caloric_diff<1500)
-                            {
-                                get_display_progress.textContent="Your caloric deficit for the day is: "+ caloric_diff+" ,this is too low. Please eat sufficient amount of food to maintain your health."
-                            }
-                        if(caloric_diff>1500&&caloric_diff<get_mtnc_calories_for_check)
-                            {
-                                get_display_progress.textContent="Your caloric deficit for the day is: "+ caloric_diff+". Congratulations, you achieved your calories goal for the day"
-                            }
+                if(caloric_diff>=mntc_calories)
+                {
+                    get_display_message.textContent="You won't lose fat if you keep eating like this. Please reduce your caloric intake by atleast 250 calories per day to lose fat"
+                }
 
-                    }
+                if(caloric_diff<mntc_calories)
+                {
+                    get_display_message.textContent="Congratulations, you are in a caloric deficit. Keep it up. Also please still eat more than 1500 calories a day to remain healthy"
+                }
 
-                else if(caloric_diff>1500&&caloric_diff>=get_mtnc_calories_for_check)
-                    {
-                        get_display_progress.textContent="Your caloric deficit for the day is: "+ caloric_diff+". You are eating a lot of extra calories. Please watch and plan your meals better to ensure fat loss"
-                    }    
             }
 
         if(fitness_goal==="weight-gain")
             {
-                if(caloric_diff>get_mtnc_calories_for_check)
-                    {
-                       if(caloric_diff>get_mtnc_calories_for_check)
-                            {
-                                get_display_progress.textContent="You are consuming enough calories for weight gain. Calories consumed: "+caloric_diff
-                            }
-                    }
+                if(caloric_diff>=mntc_calories)
+                {
+                    get_display_message.textContent="Congratulations, you have consumed more calories than your maintainance calories. This will help you put on weight/muscle. Please continue to eat healthy and in limits"
 
-                else if(caloric_diff<get_mtnc_calories_for_check)
-                    {
-                        get_display_progress.textContent="Your caloric deficit for the day is: "+ caloric_diff+". You are not meeting your calorie goals for the day. Please watch and plan your meals better to avoid muscle loss."
-                    }    
+                }
 
+                if(caloric_diff<mntc_calories)
+                {
+                    get_display_message.textContent= "You ate too less today to meet your goal of weight/muscle gain."
+                }
+               
             }
 
             if(fitness_goal==="maintain")
             {
-                if(caloric_diff>get_mtnc_calories_for_check)
-                    {
-                       
-                        get_display_progress.textContent="You are consuming too many calories. Avoid consuming way too many calories than maintainance calories to not gain extra fat"
-                            
-                    }
+               if(caloric_diff===mntc_calories)
+               {
+                   get_display_message.textContent= "Congratulations, you have eaten enough to meet your maintainace calorie amount for the day."
+               }
 
-                else if(caloric_diff<get_mtnc_calories_for_check)
-                    {
-                        get_display_progress.textContent="Your caloric deficit for the day is: "+ caloric_diff+". You are not meeting your calorie goals for the day. Please watch and plan your meals better to avoid muscle loss."
-                    }    
-                
-                else if(caloric_diff===get_mtnc_calories_for_check)
-                    {
-                        get_display_progress.textContent="You are consuming just enough calories to maintain your current weight"
-                    }
+               else if(caloric_diff>mntc_calories)
+               {
+                   get_display_message.textContent= "You are eating more than your maintainance calories"
+               }
+
+               else if(caloric_diff<mntc_calories)
+               {
+                   get_display_message.textContent= "You are eating less than your maintainance calories"
+               }
 
             }
 }
