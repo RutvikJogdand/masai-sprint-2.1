@@ -23,4 +23,4 @@ Thats it!
 
 ### How to use this project:
 Simply clone it on your system and get started or you can even use this link directly:
-#### <a href="https://masai-sprint-2-1.vercel.app/">Click Me! </a>
+#### <a href="https://masai-sprint-2-1.vercel.app/">Go to the application </a>
